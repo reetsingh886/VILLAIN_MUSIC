@@ -14,8 +14,8 @@
 
 import random
 from typing import Dict, List, Union
-from ThakurxMusic import userbot
-from ThakurxMusic.core.mongo import mongodb
+from VILLAIN_MUSIC import userbot
+from VILLAIN_MUSIC.core.mongo import mongodb
 
 authdb = mongodb.adminauth
 authuserdb = mongodb.authuser
@@ -86,7 +86,7 @@ async def set_assistant_new(chat_id, number):
 
 
 async def set_assistant(chat_id):
-    from ThakurxMusic.core.userbot import assistants
+    from VILLAIN_MUSIC.core.userbot import assistants
 
     ran_assistant = random.choice(assistants)
     assistantdict[chat_id] = ran_assistant
@@ -100,7 +100,7 @@ async def set_assistant(chat_id):
 
 
 async def get_assistant(chat_id: int) -> str:
-    from ThakurxMusic.core.userbot import assistants
+    from VILLAIN_MUSIC.core.userbot import assistants
 
     assistant = assistantdict.get(chat_id)
     if not assistant:
@@ -127,7 +127,7 @@ async def get_assistant(chat_id: int) -> str:
 
 
 async def set_calls_assistant(chat_id):
-    from ThakurxMusic.core.userbot import assistants
+    from VILLAIN_MUSIC.core.userbot import assistants
 
     ran_assistant = random.choice(assistants)
     assistantdict[chat_id] = ran_assistant
@@ -140,7 +140,7 @@ async def set_calls_assistant(chat_id):
 
 
 async def group_assistant(self, chat_id: int) -> int:
-    from ThakurxMusic.core.userbot import assistants
+    from VILLAIN_MUSIC.core.userbot import assistants
 
     assistant = assistantdict.get(chat_id)
     if not assistant:
