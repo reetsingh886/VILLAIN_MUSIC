@@ -2,7 +2,8 @@ FROM nikolaik/python-nodejs:python3.10-nodejs19
 
 RUN sed -i 's|http://deb.debian.org/debian|http://archive.debian.org/debian|g' /etc/apt/sources.list && \
     sed -i '/security.debian.org/d' /etc/apt/sources.list && \
-    apt-get update && \
+    find /etc/apt/sources.list.d -type f -delete && \
+    apt-get -o Acquire::Check-Valid-Until=false update && \
     apt-get install -y --no-install-recommends ffmpeg aria2 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -13,4 +14,4 @@ WORKDIR /app/
 RUN python -m pip install --no-cache-dir --upgrade pip
 RUN pip3 install --no-cache-dir --upgrade --requirement requirements.txt
 
-CMD bash start
+CMD ["bash", "start"]
