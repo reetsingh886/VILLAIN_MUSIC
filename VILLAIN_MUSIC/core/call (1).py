@@ -27,9 +27,9 @@ from pytgcalls.types import AudioQuality, VideoQuality
 from pytgcalls.types import MediaStream, ChatUpdate
 import config
 from config import autoclean
-from ThakurxMusic import LOGGER, YouTube, app
-from ThakurxMusic.misc import db
-from ThakurxMusic.utils.database import (
+from VILLAIN_MUSIC import LOGGER, YouTube, app
+from VILLAIN_MUSIC.misc import db
+from VILLAIN_MUSIC.utils.database import (
     add_active_chat,
     add_active_video_chat,
     get_lang,
@@ -43,13 +43,13 @@ from ThakurxMusic.utils.database import (
     is_vc_logger,
     is_thumb_enabled,
 )
-from ThakurxMusic.utils.exceptions import AssistantErr
-from ThakurxMusic.utils.formatters import check_duration, seconds_to_min, speed_converter
-from ThakurxMusic.utils.inline.play import stream_markup
-from ThakurxMusic.utils.stream.autoplay import get_related_video, is_autoplay, add_to_history
-from ThakurxMusic.utils.logger import autoplay_logs
-from ThakurxMusic.utils.stream.queue import put_queue
-from ThakurxMusic.utils.thumbnails import get_thumb
+from VILLAIN_MUSIC.utils.exceptions import AssistantErr
+from VILLAIN_MUSIC.utils.formatters import check_duration, seconds_to_min, speed_converter
+from VILLAIN_MUSIC.utils.inline.play import stream_markup
+from VILLAIN_MUSIC.utils.stream.autoplay import get_related_video, is_autoplay, add_to_history
+from VILLAIN_MUSIC.utils.logger import autoplay_logs
+from VILLAIN_MUSIC.utils.stream.queue import put_queue
+from VILLAIN_MUSIC.utils.thumbnails import get_thumb
 from strings import get_string
 
 autoend = {}
@@ -562,4 +562,4 @@ class Call(PyTgCalls):
         async def stream_end_handler1(client: PyTgCalls, update: StreamEnded):
             await self.change_stream(client, update.chat_id)
 
-Thakur = Call()
+VILLAIN = Call()
